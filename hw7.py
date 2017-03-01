@@ -48,52 +48,32 @@ while menu_choice != 5:
         print("Remove User")
         name = input("Name: ")
         if name in usernames:
-            pass # delete that entry
+            try:
+            # Delete that entry if they enter a name that's a key in the dictionary
+                del usernames[name]
+                print ("{} has been deleted".format(name))
+            #Raise this error if the entry isn't in the dictionary
+            except ValueError:
+                print ("Ruh-roh! Since {} isn't in the dictionary, they can't be deleted.")
+                raise ValueError
+        # If they enter a name that's not a key in the dictionary, we'll let htem know.
+        else:
+            print("Aw, sad—{} isn't in the dictionary.".format(name))
+
 
     # view user name      
     elif menu_choice == 4:
         print("Lookup User")
         name = input("Name: ")
+        # If the name (key) is in the dictionary menu_choice, let them know. Otherwise, tell them it's not there
         if name in usernames:
-            pass # print the username
+            # print the username with pretty string formatting
+            print("Your username is: {}".format(name))
         else:
-            pass # print username not found
+            # If they enter a name that's not a key in the dictionary, we'll let htem know.
+            print("Aw, sad—{} isn't in the dictionary.".format(name))
+                
     
-    # is user enters something strange, show them the menu
+    # if user enters something strange, show them the menu
     elif menu_choice != 5:
         print_menu()
-
-
-print( 'Regular dictionary')
-d = {}
-d['a'] = 'A'
-d['b'] = 'B'
-d['c'] = 'C'
-d['d'] = 'D'
-d['e'] = 'E'
-
-for k, v in d.items():
-    print (k, v)
-
-print ('\nOrderedDict:')
-d = OrderedDict()
-d['a'] = 'A'
-d['b'] = 'B'
-d['c'] = 'C'
-d['d'] = 'D'
-d['e'] = 'E'
-
-for k, v in d.items():
-    print (k, v)
-
-print ('\nSortedDict:')
-d = SortedDict()
-d['a'] = 'A'
-d['e'] = 'E'
-d['c'] = 'C'
-d['d'] = 'D'
-d['b'] = 'B'
-
-
-for k, v in d.items():
-    print (k, v)
