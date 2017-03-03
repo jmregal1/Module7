@@ -48,14 +48,10 @@ while menu_choice != 5:
         print("Remove User")
         name = input("Name: ")
         if name in usernames:
-            try:
             # Delete that entry if they enter a name that's a key in the dictionary
-                del usernames[name]
-                print ("{} has been deleted".format(name))
+            del usernames[name]
+            print ("{} has been deleted".format(name))
             #Raise this error if the entry isn't in the dictionary
-            except ValueError:
-                print ("Ruh-roh! Since {} isn't in the dictionary, they can't be deleted.")
-                raise ValueError
         # If they enter a name that's not a key in the dictionary, we'll let them know.
         else:
             print("Aw, sad—{} isn't in the dictionary.".format(name))
