@@ -56,7 +56,7 @@ while menu_choice != 5:
             except ValueError:
                 print ("Ruh-roh! Since {} isn't in the dictionary, they can't be deleted.")
                 raise ValueError
-        # If they enter a name that's not a key in the dictionary, we'll let htem know.
+        # If they enter a name that's not a key in the dictionary, we'll let them know.
         else:
             print("Aw, sad—{} isn't in the dictionary.".format(name))
 
@@ -70,7 +70,7 @@ while menu_choice != 5:
             # print the username with pretty string formatting
             print("Your username is: {}".format(name))
         else:
-            # If they enter a name that's not a key in the dictionary, we'll let htem know.
+            # If they enter a name that's not a key in the dictionary, we'll let them know.
             print("Aw, sad—{} isn't in the dictionary.".format(name))
                 
     
